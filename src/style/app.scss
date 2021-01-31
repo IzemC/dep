@@ -1,0 +1,23 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+#root{
+display: flex;
+height: 100vh;
+flex-flow: column nowrap;
+}
+
+.navbar{
+    flex: 0 0 auto;
+}
+.content{
+    flex: 1 0 auto;
+    height: 100%;
+}
+.banner{
+    flex: 0 0 auto;
+}
