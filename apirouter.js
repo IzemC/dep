@@ -8,7 +8,7 @@ const dbUser = "owner";
 
 const secretKey = "gsdhr<jrjdjzf<ghshe";
 const MongoClient = require('mongodb').MongoClient;
-const uri = `mongodb://${dbUser}:${dbKey}@cluster0.fqofh.mongodb.net/365tenders`;
+const uri = `mongodb://${dbUser}:${dbKey}@localhost:27017/365tenders`;
 const client = new MongoClient(uri, {
      useNewUrlParser: true ,
      useUnifiedTopology: true,
