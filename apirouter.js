@@ -57,7 +57,7 @@ router.post("/register",express.urlencoded(),async (req,res)=>{
     }
 });
 router.get("/posts",async (req,res)=>{
-    let posts = COLLECTION_POSTS.find("").limit(100);
+    let posts = COLLECTION_POSTS.find("").limit(3000);
     let pa = await posts.toArray();
     res.send(pa);
     posts.close();
@@ -78,7 +78,7 @@ router.post("/auth",express.urlencoded(),async (req,res)=>{
     res.sendStatus(404)
 });
 router.all("*",(req,res)=>{
-    es.sendStatus(404);
+    res.sendStatus(404);
 });
 
 
