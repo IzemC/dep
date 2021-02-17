@@ -36,7 +36,7 @@
         padding: 0.3em 1em;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
-        background-color: #ffffffff;
+        background-color: #ffffffaa;
         .header{
             border-bottom: solid red 0.3em;
             width: 40%;
@@ -47,7 +47,7 @@
     .annonce-zone{
         display:flex;
         flex-direction: row;
-        background-color: #ffffffff;
+        background-color: #ffffffaa;
        .filters{
             margin-left: 0.3em;
             @media screen and (max-width:860px) {

@@ -20,8 +20,8 @@ const Links = ()=>{
     return (
     <>
         <div className="links">
-            <Link to="/">PRODUCT</Link>
-            <Link to="/">PRICING</Link>
+            {state.isAuth ? <></>:<Link to="/">PRODUCT</Link>}
+            {state.isAuth ? <></>:<Link to="/">PRICING</Link>}
             <Link to="/">TENDERS</Link>
             {state.isAuth ? <><Link to="/logout">LOG OUT</Link><Link to="/dashboard">DASHBOARD</Link></> : <><Link to="/login">LOG IN</Link><Link to="/register" className="sign-up">SIGN UP</Link></>}
             <Link to="/" className="contact-num"> <FaHeadphonesAlt/>+213999999999</Link>
@@ -30,7 +30,7 @@ const Links = ()=>{
         <div className="links-dropdownbutton" focus="false">
         <FaBars/>
         <div className="dropdown-menu">
-            <Link to="/">PRODUCT</Link>
+            {state.isAuth ? <></>:<Link to="/">PRODUCT</Link>}
             {state.isAuth ? <></> :<Link to="/">PRICING</Link>}
             <Link to="/">TENDERS</Link>
             {state.isAuth ? <><Link to="/logout">LOG OUT</Link> <Link to="/dashboard">DASHBOARD</Link></>: <><Link to="/login">LOG IN</Link><Link to="/register" className="sign-up">SIGN UP</Link></>}

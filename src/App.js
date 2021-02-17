@@ -49,7 +49,7 @@ const App = ()=>{
     return (
         <AuthStore>
             <Router>
-                <div style={{backgroundImage:"url("+img+")",backgroundSize:"100% auto",width:"100vw",backgroundRepeat:"no-repeat",height:"100vh",position:"absolute",top:"0",zIndex:"-2"}}>
+                <div style={{backgroundImage:"url("+img+")",backgroundSize:"100% 100%",width:"100vw",height:"130%",position:"absolute",top:"0",zIndex:"-2"}}>
                     <div style={{backgroundColor:"#0069A380" ,zIndex:"-1" ,width:"100%",height:"100%"}} />
                 </div>
                 <Navbar/>

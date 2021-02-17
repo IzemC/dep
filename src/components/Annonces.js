@@ -13,7 +13,11 @@ function Annonces() {
     const _data = JSON.parse(data);   
     const regEx = /(:?<[\s\S]+?>|&[\s\S]+?;)/g;
     const [state,setState] = useState(null);
-
+    const [query,setQuery] = useState("");
+    const search = ()=>{
+        let query = document.querySelector("#search-input").value;
+        setQuery(query);
+    }
 
     useEffect(async()=>{
         let res;
@@ -38,9 +42,9 @@ function Annonces() {
     return (
         <div className="annonces">
             <div className="search-zone">
-                <input type="text"/>
-                <button>
-                    <FaSearch/>
+                <input type="text" id="search-input"/>
+                <button onClick={search} >
+                    <FaSearch />
                 </button>
             </div>
             <div className="header-container">
@@ -83,7 +87,7 @@ function Annonces() {
 
                     })}
                 </div>
-                {state ? <div className="cards">{state.map(s=>{return (
+                {state ? <div className="cards">{state.map(s=>{  console.log(s.sectors);    return  (s.title.toLowerCase().includes(query.toLowerCase()) || s.client.toLowerCase().includes(query.toLowerCase()) || s.client.toLowerCase().includes(query.toLowerCase())|| s.location?.toLowerCase().includes(query.toLowerCase())  ||s.sectors.replaceAll(regEx,"").toLowerCase().includes(query.toLowerCase()) )  ? (
                     <div className="card">
                         <div className="card-head">
                             {s.title}
@@ -98,7 +102,7 @@ function Annonces() {
                             <div className="c-date"><FaCalendar /> {s.close ? s.close : "non Specifie"}</div>
                             <div className="loc"><FaMapMarkerAlt />{s.location ? s.location : "non Specifie"}</div>
                         </div>
-                    </div>)})}
+                    </div>): <></>}) }
                 </div>: <div className="loader"><Loader type="Puff" color="#00BFFF" height={100} width={100}/></div>}
             </div> 
         </div>
