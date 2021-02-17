@@ -1,0 +1,169 @@
+.annonces{
+    display: flex;
+    flex-direction: column;
+    .search-zone{
+        margin: 2em;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        button{
+            border-radius: 0.3em;
+            padding: 0.7em;
+            border: none;
+            margin-left: 1em;
+            box-shadow: 0 0 10px -5px black;
+            &:hover{
+                background-color: #ffffffaa;
+            }
+        }
+        input{
+            border-radius: 0.3em;
+            padding: 0.7em;
+            border: none;
+            box-shadow: 0 0 10px -5px black;
+            &:focus{
+                box-shadow: inset 0 0 5px -1px green;
+                border: none;
+            }
+        }
+    }
+    .header-container{
+        font-family: sans-serif;
+        display:flex;
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+        padding: 0.3em 1em;
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
+        background-color: #ffffffff;
+        .header{
+            border-bottom: solid red 0.3em;
+            width: 40%;
+            font-size: 1.3em;
+            padding: 0.3em 1em;
+        }
+    }
+    .annonce-zone{
+        display:flex;
+        flex-direction: row;
+        background-color: #ffffffff;
+       .filters{
+            margin-left: 0.3em;
+            @media screen and (max-width:860px) {
+                display: none;
+            }
+            .filter-type{
+
+                .filter-cat{
+                    margin: 1em 0.3em;
+                    padding: 0.3em 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    box-shadow: 0 0 10px -2px grey;
+                    .title{
+                        padding-left: 1em;
+                        border-left: solid red 0.3em;
+                        border-radius: 5%;
+                    }
+                    svg{
+                        padding:  0 1em;
+                        path{
+                            pointer-events: none;
+                        }
+                    }
+                }
+                .filter-sub-cat{
+                    margin: 0.1em;
+                    margin-left: 1em ;
+                    display: none;
+                    .filter-check{
+                        margin: 0.1em;
+                        margin-left: 1em ;
+                    }
+                }
+                .minus{
+                    display: none;
+                }
+                &[show=true]{
+                    .filter-sub-cat{
+                        display: block;
+                    } 
+                    .minus{
+                        display: block;
+                    }.plus{
+                        display: none;
+                    }
+
+                }
+                
+            }
+           
+        
+        }
+        .cards{
+            margin: 2em 2em;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-self: center;
+            flex-direction: column;
+            justify-items:center;
+            align-items: center;
+            overflow-y: scroll;
+            border-radius: 1em;
+            padding: 10px;
+            box-shadow: inset 0 5px 3px -5px black,inset 0 -5px 3px -5px black;
+            .card{
+                border-radius: 1%;
+                width: 80%;
+                background-color: #eeeeee;
+                box-shadow: 0 0 15px -2px  #000000aa;
+                display: grid;
+                margin-bottom: 30px;
+                grid-template-areas: "head head head"
+                                     "content content content"
+                                     "footer footer footer";     
+                .card-head{
+                    grid-area: head;
+                    padding: 0.7em ;
+                    justify-self: start;
+                    box-shadow: 0px 2px 1px -1px red;
+                    border-left: solid red 0.3em;
+                    border-radius: 1%;
+                }
+                .card-content{
+                    grid-area: content;
+                    text-align: start;
+                    justify-self: start;
+                    padding: 30px;
+                }
+                .card-footer{
+                    grid-area: footer;
+                    display: flex;
+                    justify-content: space-around;
+                    box-shadow: 0px -2px 1px -1px red;
+                    padding: 0.7em;
+                    .o-date svg{
+                    color: green;
+                    margin-right: 5px;
+                    }
+                    .c-date svg {
+                    color: red;
+                    margin-right: 5px;
+                    }
+                    
+                    .loc svg{
+                        color: black;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .loader{
+           margin: 10% auto;
+        }
+            
+    }
+}
